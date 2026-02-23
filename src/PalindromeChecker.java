@@ -1,12 +1,18 @@
 import java.util.*;
-
+import java.util.Scanner;
 public class PalindromeChecker{
 
     public static void main(String[] args) {
         // UC2 - Hardcoded Palindrome
-        String hardcoded = "madam";
-        System.out.println("\nUC2 - Hardcoded Check:");
-        System.out.println("Word: " + hardcoded);
-        System.out.println("Is Palindrome: true");
+        // Take ONLY ONE INPUT for all remaining UC
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("\nEnter a string to check palindrome: ");
+        String input = scanner.nextLine();
+
+        // UC3 - String Reverse Method
+        System.out.println("\nUC3 - Using String Reverse:");
+        String reversed = new StringBuilder(input).reverse().toString();
+        System.out.println(input.equals(reversed) ? "Palindrome" : "Not Palindrome");
+
     }
 }
