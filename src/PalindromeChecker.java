@@ -6,26 +6,23 @@ public class PalindromeChecker{
         Scanner scanner=new Scanner(System.in);
         System.out.print("\nEnter a string to check palindrome: ");
         String input = scanner.nextLine();
-        // UC6 - Queue + Stack Method
-        System.out.println("\nUC6 - Using Queue + Stack:");
-        Stack<Character> stack2 = new Stack<>();
-        Queue<Character> queue = new LinkedList<>();
+
+        // UC7 - Deque Method (Optimized)
+        System.out.println("\nUC7 - Using Deque (Optimized):");
+        Deque<Character> deque = new LinkedList<>();
 
         for (char c : input.toCharArray()) {
-            stack2.push(c);
-            queue.add(c);
+            deque.add(c);
         }
 
-        boolean isPalindromeQS = true;
-        while (!stack2.isEmpty()) {
-            if (!stack2.pop().equals(queue.remove())) {
-                isPalindromeQS = false;
+        boolean isPalindromeDeque = true;
+        while (deque.size() > 1) {
+            if (!deque.removeFirst().equals(deque.removeLast())) {
+                isPalindromeDeque = false;
                 break;
             }
         }
-        System.out.println(isPalindromeQS ? "Palindrome" : "Not Palindrome");
-
-
+        System.out.println(isPalindromeDeque ? "Palindrome" : "Not Palindrome");
 
 
     }
