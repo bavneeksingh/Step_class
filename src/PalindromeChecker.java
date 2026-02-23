@@ -9,10 +9,18 @@ public class PalindromeChecker{
         System.out.print("\nEnter a string to check palindrome: ");
         String input = scanner.nextLine();
 
-        // UC3 - String Reverse Method
-        System.out.println("\nUC3 - Using String Reverse:");
-        String reversed = new StringBuilder(input).reverse().toString();
-        System.out.println(input.equals(reversed) ? "Palindrome" : "Not Palindrome");
+        // UC4 - Character Array Method
+        System.out.println("\nUC4 - Using Character Array:");
+        char[] arr = input.toCharArray();
+        boolean isPalindromeArray = true;
+
+        for (int i = 0; i < arr.length / 2; i++) {
+            if (arr[i] != arr[arr.length - 1 - i]) {
+                isPalindromeArray = false;
+                break;
+            }
+        }
+        System.out.println(isPalindromeArray ? "Palindrome" : "Not Palindrome");
 
     }
 }
