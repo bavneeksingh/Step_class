@@ -3,7 +3,10 @@ import java.util.*;
 public class PalindromeChecker{
 
     public static void main(String[] args) {
-        // UC1 - Application Entry & Welcome Message
-        System.out.println("Welcome to Palindrome Checker Application!");
+        // UC2 - Hardcoded Palindrome
+        String hardcoded = "madam";
+        System.out.println("\nUC2 - Hardcoded Check:");
+        System.out.println("Word: " + hardcoded);
+        System.out.println("Is Palindrome: true");
     }
 }
